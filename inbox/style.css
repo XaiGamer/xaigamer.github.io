@@ -1,0 +1,389 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+html, body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  background: url("commonbg.png");
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  margin: 0 1em;
+}
+body {
+  background: none;
+  display: block;
+  margin: calc(2.5em + 4px) 0;
+}
+main {
+  background: #000a;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  color: #fff;
+}
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav > ul > li {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+nav > ul > li > a, nav > ul > li > span {
+  display: block;
+  background: #fff8;
+  border: 1px solid #fffc;
+  color: #000;
+  padding: 0.5em 1em;
+  &:not(span) { cursor: pointer; }
+  box-shadow: 0 4px 0 #fffa;
+  height: 1.5em;
+  transform: none;
+  margin: 0;
+  color: #000;
+  text-decoration: none;
+  &:not(span):hover, :not(span)&:focus {
+    color: #000;
+    text-decoration: underline;
+  }
+  &:not(span):active {
+    color: #000;
+    box-shadow: none;
+    transform: translateY(4px);
+  }
+}
+footer {
+    display: flex;
+    height: 3em;
+    flex-wrap: wrap;
+    background: #000a;
+    color: #fff;
+    margin-top: 1em;
+    align-content: center;
+    justify-content: center;
+}
+
+h1 {
+  margin: 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+label:not(.tecknar-container label) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+}
+input[type="text"], input[type="number"], textarea {
+  background: #0008;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.5em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+input[type="color"] {
+  background: none;
+  border: none;
+  padding: 0;
+  height: 2em;
+  vertical-align: middle;
+}
+button, #canvas-tools li, #canvas-container .tecknar-container button, #canvas-container .tecknar-container .tecknar-toolbar li label, .tecknar-import-file, .sections label {
+  background: #fff8;
+  border: 1px solid #fffc;
+  color: #000;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #fffa;
+  transform: translateY(-4px);
+  margin-top: 4px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  &:hover, &:focus {
+    background: #fffb;
+    box-shadow: 0 4px 0 #fffa;
+  }
+  &:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  &:disabled, &:has(input:checked) {
+    background: #fff4;
+    border-color: #fff8;
+    box-shadow: none;
+    transform: translateY(0);
+    cursor: not-allowed;
+  }
+}
+a {
+  color: #8df;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover, &:focus {
+    color: #cdf;
+  }
+  &:active {
+    color: #fd8;
+  }
+}
+#canvas-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  background: #0008;
+  padding: 1em;
+  border: 1px solid #fff
+}
+.canvas-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.5em;
+}
+#canvas {
+  background: #fff;
+  width: 250px;
+  height: 200px;
+  touch-action: none;
+  user-select: none;
+  pointer-events: auto;
+  border: 4px inset #dddd;
+}
+#canvas-tool-area {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+#canvas-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+dialog::backdrop {
+  background: #0006; 
+}
+dialog {
+  background: #000d;
+  box-shadow: 0 0 1em #fff;
+  color: #fff;
+  max-width: 50vw;
+  max-height: 75vh;
+  overflow-y: scroll;
+}
+dialog h2, dialog p {
+  color: #fff;
+}
+.modal-close {
+  float: right;
+}
+#what {
+  width: min-content;
+  float: right;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  overflow-x: scroll;
+}
+th, td {
+  border: 1px solid #fff;
+  padding: 0.5em;
+  text-align: left;
+}
+td {
+  background-color: #63a1a044;
+}
+tr:nth-child(even) td {
+  background-color: #63a1a022;
+}
+th {
+  background-color: #8ed2d144;
+}
+tr:nth-child(even) th {
+  background-color: #8ed2d122;
+}
+canvas {
+  background: #fff;
+}
+td img, th img {
+  max-width: 450px;
+  max-height: 450px;
+}
+.response-links {
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 1em;
+  opacity: 0.8;
+}
+#canvas-tools, #canvas-layers {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#canvas-tools li {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#canvas-tools li label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#canvas-tools input {
+  display: none;
+}
+#canvas-layer-tools {
+  display: flex;
+}
+#canvas-tools, #canvas-layer-tools {
+  flex-direction: column;
+  align-items: left;
+  max-height: 208px;
+  justify-content: space-between;
+}
+#canvas-layers-container {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+#canvas-layers {
+  flex: 1 1 auto;
+  align-items: left;
+  overflow-y: auto;
+  max-height: 200px;
+}
+#canvas-layers li {
+  display: flex;
+  flex-direction: row;
+}
+
+main:has(#table-specifically-the-response-one) {
+  width: 75vw;
+}
+#table-specifically-the-response-one pre {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  white-space: pre-wrap;
+  margin: 0;
+  font-size: 1em;
+}
+
+#table-specifically-the-response-one tr td:nth-child(odd) {
+  flex: 1 1 30%;
+  margin-bottom: 3em;
+}
+
+#table-specifically-the-response-one tr {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-bottom: 3em;
+}
+
+#table-specifically-the-response-one tr td:nth-child(even) {
+  flex: 1 1 60%;
+  margin-top: 3em;
+}
+
+#table-specifically-the-response-one tr:nth-child(even) {
+  margin-right: 3em;
+}
+
+#table-specifically-the-response-one tr:nth-child(odd) {
+  margin-left: 3em;
+}
+
+#table-specifically-the-response-one td {
+  background-color: #3b526b88;
+  box-shadow: 0 1em #3b526b, inset 1em 1em #7695b622, inset -1em -1em #09152266;
+  border: 1px inset #fff4;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  font-size: 0.8em;
+}
+
+#table-specifically-the-response-one canvas {
+  width: 250px;
+  height: 200px;
+  border: 4px inset #dddd;
+}
+
+#table-specifically-the-response-one img {
+  border: 4px inset #dddd;
+}
+
+.tecknar-topbar {
+  background: none;
+  border-bottom-color: #fff;
+}
+
+.tecknar-canvasbar {
+  background: none;
+}
+
+.tecknar-container-middle {
+  background: none;
+}
+
+.tecknar-bottombar {
+  background: none;
+  border-top-color: #fff;
+}
+
+.tecknar-container {
+  background: none;
+}
+
+.sections label input {
+    display: none;
+}
+
+.sections {
+    display: flex;
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.sections:has([value="section-comic"]:not(:checked)) ~ #section-comic {
+    display: none;
+}
+
+.sections:has([value="section-bright"]:not(:checked)) ~ #section-bright {
+    display: none;
+}
+
+.sections:has([value="section-text"]:not(:checked)) ~ #section-text {
+    display: none;
+}
+.sections:has([value="section-explanation"]:not(:checked)) ~ #section-explanation {
+    display: none;
+}
