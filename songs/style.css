@@ -67,7 +67,7 @@ nav > ul > li > a, nav > ul > li > span {
   }
 }
 
-main > a {
+main > ul > li > a {
   color: #fff;
   text-decoration: underline;
   &:hover, &:focus {
