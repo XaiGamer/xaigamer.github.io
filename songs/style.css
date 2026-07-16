@@ -24,16 +24,16 @@ a {
   color: #fff;
   text-decoration: underline;
   &:hover, &:focus {
-    color: #aaf;
+    color: #3af;
   }
   &:visited {
-    color: #fcf;
+    color: #83f;
   }
   &:visited:hover, &:visited:focus {
-    color: #fcc
+    color: #cff
   }
   &:active, &:visited:active {
-    color: #88f;
+    color: #55f;
   }
 }
 
@@ -42,6 +42,7 @@ nav {
   top: 0;
   width: 100%;
   padding: 1em;
+  background: #0000
 }
 nav > ul {
   display: flex;
