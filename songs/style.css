@@ -17,7 +17,7 @@ main {
   background: #000a;
   flex-direction: column;
   justify-content: center;
-  padding: 1em;
+  padding: 5em;
   color: #fff;
 }
 a {
